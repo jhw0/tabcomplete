@@ -107,8 +107,8 @@
   };
 
   var onKeyDownHandler = function (event) {
-    event = event || window.event;
-    if (event.keyCode === 9) {
+    var key = window.event ? event.keyCode : event.which;
+    if (key === 9) {
       event.preventDefault ? event.preventDefault() : event.returnValue = false;
     }
     sc.style.display = 'none';
@@ -140,7 +140,6 @@
 
     var len = pattern.length;
     if (len === 0) {
-      sc.style.display = 'none';
       return
     }
 
