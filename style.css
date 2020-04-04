@@ -1,0 +1,32 @@
+body {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#content {
+    margin-top: 100px;
+    position: relative;
+}
+
+.autocomplete-text {
+    color: darkgrey;
+    position: absolute;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+    z-index: 9999;
+    top: 4px;
+}
+
+#text_input {
+    height: 30px;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#btn {
+    height: 30px;
+    font-size: 15px;
+}
