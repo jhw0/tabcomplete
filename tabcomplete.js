@@ -49,22 +49,24 @@
   });
 
   var loadFromStorage = function () {
-    let s = localStorage.getItem("next-words");
+    let s = localStorage.getItem("words");
     if (!s) return;
     let items = JSON.parse(s);
+    for (let item of items) {
+      trieW.add(item[0], {
+        word: item[0],
+        count: item[1]
+      })
+    }
+
+    s = localStorage.getItem("next-words");
+    if (!s) return;
+    items = JSON.parse(s);
     for (let item of items) {
       trieS.add(item[0], {
         from: item[0],
         next: item[1],
         count: item[2],
-      })
-    }
-    s = localStorage.getItem("words");
-    items = JSON.parse(s);
-    for (let item of items) {
-      trieW.add(item[0], {
-        word: item[0],
-        count: item[1]
       })
     }
   };
